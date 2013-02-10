@@ -1,4 +1,4 @@
-/** 
+/**
  * \file SDLGLFont.hpp
  * \brief Bitmap font class.
  *
@@ -16,8 +16,7 @@
 /**
  * A bitmap font class usable in an SDL/OpenGL environment.
  */
-class SDLGLFont
-{
+class SDLGLFont {
   public:
     SDLGLFont(std::string);
     ~SDLGLFont();
@@ -25,7 +24,7 @@ class SDLGLFont
     void DrawString( float x, float y, std::string theString, int xResolution, int yResolution );
   private:
     bool LoadFontFromFile( std::string fileName );
-        
+
     bool fontLoaded;            //!< True if font is loaded.
     long fontTexture;           //!< Longint corresponding to OpenGL texture id.
     unsigned long fontX, fontY; //!< How big the font texture is (the file).

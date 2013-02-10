@@ -1,4 +1,4 @@
-/** 
+/**
  * \file SDLGLTexture.hpp
  * \brief SDL/OpenGL Texture functions.
  *
@@ -10,17 +10,17 @@
 #define __SDLGLTEXTURE_HPP__
 
 #ifdef __APPLE__
-	#include "SDL.h"
-	#include "SDL_opengl.h"
-	#include "SDL_image.h"
-	#include <OpenGL/gl.h>
-	#include <OpenGL/glu.h>
+  #include "SDL.h"
+  #include "SDL_opengl.h"
+  #include "SDL_image.h"
+  #include <OpenGL/gl.h>
+  #include <OpenGL/glu.h>
 #else
-	#include "SDL/SDL.h"
-	#include "SDL/SDL_opengl.h"
-	#include "SDL/SDL_image.h"
-	#include <GL/gl.h>
-	#include <GL/glu.h>
+  #include "SDL/SDL.h"
+  #include "SDL/SDL_opengl.h"
+  #include "SDL/SDL_image.h"
+  #include <GL/gl.h>
+  #include <GL/glu.h>
 #endif
 #include <string>
 

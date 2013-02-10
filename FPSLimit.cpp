@@ -1,4 +1,4 @@
-/** 
+/**
  * \file FPSLimit.cpp
  * \brief FPS Limiter.
  *
@@ -15,8 +15,7 @@ static const int NUM_MILLISECONDS_IN_SECOND = 1000;
  * \brief Constructor for FPSLimit class.
  * \param desiredFPS The desired framerate to regulate to.
  */
-FPSLimit::FPSLimit( int desiredFPS )
-{
+FPSLimit::FPSLimit( int desiredFPS ) {
   // Calculate the number of milliseconds per frame.
   numMillis = NUM_MILLISECONDS_IN_SECOND/desiredFPS;
   // Set lastTime to the current timestamp so that we have a place to start from.
@@ -26,11 +25,10 @@ FPSLimit::FPSLimit( int desiredFPS )
 /**
  * \brief Call every frame at the end to regulate the framerate.
  */
-void FPSLimit::Regulate()
-{
+void FPSLimit::Regulate() {
   // Figure out how many milliseconds have elapsed since last call.
   Uint32 timeDiff = SDL_GetTicks() - lastTime;
-  
+
   // If the amount of time is less than the number of milliseconds per frame, we
   // have time left over that we need to sleep for.  If not, we need to make a
   // performance warning since our loop went over how much time it has.
@@ -38,7 +36,7 @@ void FPSLimit::Regulate()
     SDL_Delay( numMillis - timeDiff );
   else
     printf("Performance warning: Frame took %dms (expected <%dms).\n", timeDiff, numMillis);
-  
+
   // Set this for the next time we call Regulate().
   lastTime = SDL_GetTicks();
 }

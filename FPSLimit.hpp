@@ -1,4 +1,4 @@
-/** 
+/**
  * \file FPSLimit.hpp
  * \brief FPS Limiter.
  *
@@ -16,14 +16,13 @@
   #include "SDL/SDL.h"
 #endif
 
-class FPSLimit
-{
-    public:
-        FPSLimit( int desiredFPS );
-        void Regulate();
-    private:
-        Uint32 lastTime;  //!< The SDL timestamp received last call to Regulate.
-        Uint32 numMillis; //!< The number of milliseconds per frame.
+class FPSLimit {
+  public:
+    FPSLimit( int desiredFPS );
+    void Regulate();
+  private:
+    Uint32 lastTime;  //!< The SDL timestamp received last call to Regulate.
+    Uint32 numMillis; //!< The number of milliseconds per frame.
 };
 
 #endif
